@@ -1,0 +1,1124 @@
+{
+	"info": {
+		"_postman_id": "db0a5693-b31d-4cf7-90ae-88cac674e15d",
+		"name": "Rental Tempat",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21275036"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "[ADMIN] Get Users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3030/admin/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[ADMIN] Get Users",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3030/admin/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3030",
+									"path": [
+										"admin",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Dec 2022 08:09:28 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1135"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id_user\": \"01\",\n            \"username\": \"jowna\",\n            \"password\": \"admin123\",\n            \"nama_depan\": \"Jowna\",\n            \"nama_belakang\": \"Alynsah\",\n            \"no_telp\": \"081232321\"\n        },\n        {\n            \"id_user\": \"02\",\n            \"username\": \"yefta\",\n            \"password\": \"yefta123\",\n            \"nama_depan\": \"Johanes\",\n            \"nama_belakang\": \"Yefta\",\n            \"no_telp\": \"081231232\"\n        },\n        {\n            \"id_user\": \"03\",\n            \"username\": \"halo\",\n            \"password\": \"tes123\",\n            \"nama_depan\": \"halo\",\n            \"nama_belakang\": \"halob\",\n            \"no_telp\": \"08123123123\"\n        },\n        {\n            \"id_user\": \"04\",\n            \"username\": \"halo2\",\n            \"password\": \"tes123\",\n            \"nama_depan\": \"halo3\",\n            \"nama_belakang\": \"halo2\",\n            \"no_telp\": \"08123123123\"\n        },\n        {\n            \"id_user\": \"05\",\n            \"username\": \"tes\",\n            \"password\": \"tes123\",\n            \"nama_depan\": \"tes1\",\n            \"nama_belakang\": \"tes2\",\n            \"no_telp\": \"0129301293\"\n        },\n        {\n            \"id_user\": \"06\",\n            \"username\": \"halo223\",\n            \"password\": \"tes12332\",\n            \"nama_depan\": \"halo33\",\n            \"nama_belakang\": \"halo32\",\n            \"no_telp\": \"081231231233\"\n        },\n        {\n            \"id_user\": \"10\",\n            \"username\": \"barakobama\",\n            \"password\": \"barakobama\",\n            \"nama_depan\": \"barak\",\n            \"nama_belakang\": \"obama\",\n            \"no_telp\": \"12312312\"\n        },\n        {\n            \"id_user\": \"2798\",\n            \"username\": \"ujjj\",\n            \"password\": \"weqe\",\n            \"nama_depan\": \"qweqwe\",\n            \"nama_belakang\": \"qweqwe\",\n            \"no_telp\": \"312\"\n        },\n        {\n            \"id_user\": \"3768\",\n            \"username\": \"donal\",\n            \"password\": \"donal\",\n            \"nama_depan\": \"donal\",\n            \"nama_belakang\": \"trump\",\n            \"no_telp\": \"1231231\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "[ADMIN] Get Single User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3030/admin/users/03",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"admin",
+								"users",
+								"03"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[ADMIN] Get Single User",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3030/admin/users/03",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3030",
+									"path": [
+										"admin",
+										"users",
+										"03"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Dec 2022 08:09:48 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "133"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id_user\": \"03\",\n            \"username\": \"halo\",\n            \"password\": \"tes123\",\n            \"nama_depan\": \"halo\",\n            \"nama_belakang\": \"halob\",\n            \"no_telp\": \"08123123123\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "[ADMIN] Update Place Katalog",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_tempat\": \"T03\",\r\n    \"id_pemilik\": \"02\",\r\n    \"nama_tempat\": \"Villae2\",\r\n    \"lokasi_tempat\": \"Puncak2\",\r\n    \"harga_permalam\": \"50000\",\r\n    \"jumlah_kamar\": \"6\",\r\n    \"jumlah_kamar_mandi\": \"5\",\r\n    \"air_panas\": \"true\",\r\n    \"fasilitas_lain\": \"kolam\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3030/admin/places/T03",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"admin",
+								"places",
+								"T03"
+							]
+						},
+						"description": "Hanya dapat mengambil reservasi dari user itu sendiri sehingga menggunakan userId yang disimpan dalam payload **token**"
+					},
+					"response": [
+						{
+							"name": "[ADMIN] Update Place Katalog",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id_tempat\": \"T03\",\r\n    \"id_penyewa\": \"02\",\r\n    \"nama_tempat\": \"Villae2\",\r\n    \"lokasi_tempat\": \"Puncak2\",\r\n    \"harga_permalam\": \"50000\",\r\n    \"jumlah_kamar\": \"6\",\r\n    \"jumlah_kamar_mandi\": \"5\",\r\n    \"air_panas\": \"true\",\r\n    \"fasilitas_lain\": \"kolam\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3030/admin/places/T03",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3030",
+									"path": [
+										"admin",
+										"places",
+										"T03"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Dec 2022 08:10:52 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "212"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": {\n        \"id_tempat\": \"T03\",\n        \"id_pemilik\": \"01\",\n        \"nama_tempat\": \"Villae2\",\n        \"lokasi_tempat\": \"Puncak2\",\n        \"harga_permalam\": \"50000\",\n        \"jumlah_kamar\": \"6\",\n        \"jumlah_kamar_mandi\": \"5\",\n        \"air_panas\": \"true\",\n        \"fasilitas_lain\": \"kolam\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "[ADMIN] Delete Place",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3030/admin/places/T15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"admin",
+								"places",
+								"T15"
+							]
+						},
+						"description": "Hanya dapat mengambil reservasi dari user itu sendiri sehingga menggunakan userId yang disimpan dalam payload **token**"
+					},
+					"response": [
+						{
+							"name": "[ADMIN] Delete Place",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3030/admin/places/T15",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3030",
+									"path": [
+										"admin",
+										"places",
+										"T15"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Dec 2022 08:12:06 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "16"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get Current User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3030/user/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Current User",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3030/user/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3030",
+									"path": [
+										"user",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Dec 2022 08:15:04 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "195"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"success\",\n    \"user\": {\n        \"Value\": {\n            \"id_user\": \"01\",\n            \"username\": \"jowna\",\n            \"password\": \"admin123\",\n            \"nama_depan\": \"Jowna\",\n            \"nama_belakang\": \"Alynsah\",\n            \"no_telp\": \"081232321\"\n        },\n        \"Error\": null,\n        \"RowsAffected\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Reservations",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3030/user/reservations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"user",
+								"reservations"
+							]
+						},
+						"description": "Hanya dapat mengambil reservasi dari user itu sendiri sehingga menggunakan userId yang disimpan dalam payload **token**"
+					},
+					"response": [
+						{
+							"name": "Get Reservations",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3030/user/reservations",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3030",
+									"path": [
+										"user",
+										"reservations"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Dec 2022 08:17:22 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1876"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id_reservasi\": \"R376815\",\n            \"id_tempat\": \"T05\",\n            \"id_pemilik\": \"3768\",\n            \"tanggal_mulai\": \"2022-12-02\",\n            \"tanggal_selesai\": \"2022-12-08\",\n            \"id_penyewa\": \"3768\"\n        },\n        {\n            \"id_reservasi\": \"R376823\",\n            \"id_tempat\": \"T01\",\n            \"id_pemilik\": \"02\",\n            \"tanggal_mulai\": \"2022-12-02\",\n            \"tanggal_selesai\": \"2022-12-09\",\n            \"id_penyewa\": \"3768\"\n        },\n        {\n            \"id_reservasi\": \"R37683\",\n            \"id_tempat\": \"T05\",\n            \"id_pemilik\": \"3768\",\n            \"tanggal_mulai\": \"2022-12-02\",\n            \"tanggal_selesai\": \"2022-12-09\",\n            \"id_penyewa\": \"3768\"\n        },\n        {\n            \"id_reservasi\": \"R376842\",\n            \"id_tempat\": \"T03\",\n            \"id_pemilik\": \"01\",\n            \"tanggal_mulai\": \"2022-12-02\",\n            \"tanggal_selesai\": \"2022-12-09\",\n            \"id_penyewa\": \"3768\"\n        },\n        {\n            \"id_reservasi\": \"R376850\",\n            \"id_tempat\": \"T01\",\n            \"id_pemilik\": \"02\",\n            \"tanggal_mulai\": \"2022-12-02\",\n            \"tanggal_selesai\": \"2022-12-16\",\n            \"id_penyewa\": \"3768\"\n        },\n        {\n            \"id_reservasi\": \"R376855\",\n            \"id_tempat\": \"T01\",\n            \"id_pemilik\": \"02\",\n            \"tanggal_mulai\": \"2022-12-08\",\n            \"tanggal_selesai\": \"2022-12-16\",\n            \"id_penyewa\": \"3768\"\n        },\n        {\n            \"id_reservasi\": \"R376857\",\n            \"id_tempat\": \"T05\",\n            \"id_pemilik\": \"3768\",\n            \"tanggal_mulai\": \"2022-12-09\",\n            \"tanggal_selesai\": \"2022-12-16\",\n            \"id_penyewa\": \"3768\"\n        },\n        {\n            \"id_reservasi\": \"R376862\",\n            \"id_tempat\": \"T01\",\n            \"id_pemilik\": \"02\",\n            \"tanggal_mulai\": \"2022-12-02\",\n            \"tanggal_selesai\": \"2022-12-08\",\n            \"id_penyewa\": \"3768\"\n        },\n        {\n            \"id_reservasi\": \"R376873\",\n            \"id_tempat\": \"T03\",\n            \"id_pemilik\": \"01\",\n            \"tanggal_mulai\": \"2022-12-02\",\n            \"tanggal_selesai\": \"2022-12-09\",\n            \"id_penyewa\": \"3768\"\n        },\n        {\n            \"id_reservasi\": \"R376876\",\n            \"id_tempat\": \"T01\",\n            \"id_pemilik\": \"02\",\n            \"tanggal_mulai\": \"2022-12-02\",\n            \"tanggal_selesai\": \"2022-12-09\",\n            \"id_penyewa\": \"3768\"\n        },\n        {\n            \"id_reservasi\": \"R376879\",\n            \"id_tempat\": \"T01\",\n            \"id_pemilik\": \"02\",\n            \"tanggal_mulai\": \"2022-12-02\",\n            \"tanggal_selesai\": \"2022-12-03\",\n            \"id_penyewa\": \"3768\"\n        },\n        {\n            \"id_reservasi\": \"R376888\",\n            \"id_tempat\": \"T11\",\n            \"id_pemilik\": \"3768\",\n            \"tanggal_mulai\": \"2022-12-01\",\n            \"tanggal_selesai\": \"2022-12-09\",\n            \"id_penyewa\": \"3768\"\n        },\n        {\n            \"id_reservasi\": \"R376899\",\n            \"id_tempat\": \"T01\",\n            \"id_pemilik\": \"02\",\n            \"tanggal_mulai\": \"2022-12-02\",\n            \"tanggal_selesai\": \"2022-12-09\",\n            \"id_penyewa\": \"3768\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Orders",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3030/user/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"user",
+								"orders"
+							]
+						},
+						"description": "Hanya dapat mengambil reservasi dari user itu sendiri sehingga menggunakan userId yang disimpan dalam payload **token**"
+					},
+					"response": [
+						{
+							"name": "Get Owner Reservations",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3030/user/orders",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3030",
+									"path": [
+										"user",
+										"orders"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Dec 2022 08:17:48 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "730"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id_reservasi\": \"R0378\",\n            \"id_tempat\": \"T05\",\n            \"id_pemilik\": \"3768\",\n            \"tanggal_mulai\": \"2022-12-02\",\n            \"tanggal_selesai\": \"2022-12-09\",\n            \"id_penyewa\": \"03\"\n        },\n        {\n            \"id_reservasi\": \"R376815\",\n            \"id_tempat\": \"T05\",\n            \"id_pemilik\": \"3768\",\n            \"tanggal_mulai\": \"2022-12-02\",\n            \"tanggal_selesai\": \"2022-12-08\",\n            \"id_penyewa\": \"3768\"\n        },\n        {\n            \"id_reservasi\": \"R37683\",\n            \"id_tempat\": \"T05\",\n            \"id_pemilik\": \"3768\",\n            \"tanggal_mulai\": \"2022-12-02\",\n            \"tanggal_selesai\": \"2022-12-09\",\n            \"id_penyewa\": \"3768\"\n        },\n        {\n            \"id_reservasi\": \"R376857\",\n            \"id_tempat\": \"T05\",\n            \"id_pemilik\": \"3768\",\n            \"tanggal_mulai\": \"2022-12-09\",\n            \"tanggal_selesai\": \"2022-12-16\",\n            \"id_penyewa\": \"3768\"\n        },\n        {\n            \"id_reservasi\": \"R376888\",\n            \"id_tempat\": \"T11\",\n            \"id_pemilik\": \"3768\",\n            \"tanggal_mulai\": \"2022-12-01\",\n            \"tanggal_selesai\": \"2022-12-09\",\n            \"id_penyewa\": \"3768\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Places (Katalog)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3030/user/places",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"user",
+								"places"
+							]
+						},
+						"description": "Hanya dapat mengambil reservasi dari user itu sendiri sehingga menggunakan userId yang disimpan dalam payload **token**"
+					},
+					"response": [
+						{
+							"name": "Get Places (Katalog)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3030/user/places",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3030",
+									"path": [
+										"user",
+										"places"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Dec 2022 08:18:36 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "818"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id_tempat\": \"T01\",\n            \"id_pemilik\": \"02\",\n            \"nama_tempat\": \"Villa23\",\n            \"lokasi_tempat\": \"Puncak244\",\n            \"harga_permalam\": \"5000000\",\n            \"jumlah_kamar\": \"4\",\n            \"jumlah_kamar_mandi\": \"9\",\n            \"air_panas\": \"true\",\n            \"fasilitas_lain\": \"kolam\"\n        },\n        {\n            \"id_tempat\": \"T03\",\n            \"id_pemilik\": \"02\",\n            \"nama_tempat\": \"Villae2\",\n            \"lokasi_tempat\": \"Puncak2\",\n            \"harga_permalam\": \"50000\",\n            \"jumlah_kamar\": \"6\",\n            \"jumlah_kamar_mandi\": \"5\",\n            \"air_panas\": \"true\",\n            \"fasilitas_lain\": \"kolam\"\n        },\n        {\n            \"id_tempat\": \"T05\",\n            \"id_pemilik\": \"3768\",\n            \"nama_tempat\": \"Tes\",\n            \"lokasi_tempat\": \"Tes\",\n            \"harga_permalam\": \"190000\",\n            \"jumlah_kamar\": \"5\",\n            \"jumlah_kamar_mandi\": \"5\",\n            \"air_panas\": \"true\",\n            \"fasilitas_lain\": \"Kolam ikan\"\n        },\n        {\n            \"id_tempat\": \"T11\",\n            \"id_pemilik\": \"3768\",\n            \"nama_tempat\": \"asd\",\n            \"lokasi_tempat\": \"asdasd\",\n            \"harga_permalam\": \"229\",\n            \"jumlah_kamar\": \"3123\",\n            \"jumlah_kamar_mandi\": \"123\",\n            \"air_panas\": \"true\",\n            \"fasilitas_lain\": \"fsdfs\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Place (Katalog)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_tempat\": \"T04\",\r\n    \"id_penyewa\": \"01\",\r\n    \"nama_tempat\": \"Villae2\",\r\n    \"lokasi_tempat\": \"Puncak2\",\r\n    \"harga_permalam\": \"50000\",\r\n    \"jumlah_kamar\": \"6\",\r\n    \"jumlah_kamar_mandi\": \"5\",\r\n    \"air_panas\": \"true\",\r\n    \"fasilitas_lain\": \"kolam\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3030/user/places",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"user",
+								"places"
+							]
+						},
+						"description": "Hanya dapat mengambil reservasi dari user itu sendiri sehingga menggunakan userId yang disimpan dalam payload **token**"
+					},
+					"response": [
+						{
+							"name": "Add Place (Katalog)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id_tempat\": \"890\", \r\n    \"id_pemilik\": \"3768\", \r\n    \"nama_tempat\": \"sunlake\",\r\n    \"lokasi_tempat\": \"sunter\",\r\n    \"harga_permalam\": \"450000\",\r\n    \"jumlah_kamar\": \"1\",\r\n    \"jumlah_kamar_mandi\": \"1\",\r\n    \"air_panas\": \"true\",\r\n    \"fasilitas_lain\": \"kolam\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3030/user/places",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3030",
+									"path": [
+										"user",
+										"places"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Dec 2022 08:20:49 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "215"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": {\n        \"id_tempat\": \"T890\",\n        \"id_pemilik\": \"3768\",\n        \"nama_tempat\": \"sunlake\",\n        \"lokasi_tempat\": \"sunter\",\n        \"harga_permalam\": \"450000\",\n        \"jumlah_kamar\": \"1\",\n        \"jumlah_kamar_mandi\": \"1\",\n        \"air_panas\": \"true\",\n        \"fasilitas_lain\": \"kolam\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Transaksi",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3030/user/transactions/",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"user",
+								"transactions",
+								""
+							]
+						},
+						"description": "Get Transaksi dari userId token payload"
+					},
+					"response": [
+						{
+							"name": "Get Transaksi",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3030/user/transactions/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3030",
+									"path": [
+										"user",
+										"transactions",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Dec 2022 08:21:05 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "566"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id_transaksi\": \"TR376817\",\n            \"id_reservasi\": \"R376873\",\n            \"total\": 350000,\n            \"metode_bayar\": \"Transfer\"\n        },\n        {\n            \"id_transaksi\": \"TR37682\",\n            \"id_reservasi\": \"R376876\",\n            \"total\": 35000000,\n            \"metode_bayar\": \"OVO\"\n        },\n        {\n            \"id_transaksi\": \"TR376843\",\n            \"id_reservasi\": \"R37683\",\n            \"total\": 1330000,\n            \"metode_bayar\": \"ShopeePay\"\n        },\n        {\n            \"id_transaksi\": \"TR376878\",\n            \"id_reservasi\": \"R376888\",\n            \"total\": 1832,\n            \"metode_bayar\": \"Transfer\"\n        },\n        {\n            \"id_transaksi\": \"TR376889\",\n            \"id_reservasi\": \"R376815\",\n            \"total\": 1140000,\n            \"metode_bayar\": \"Transfer\"\n        },\n        {\n            \"id_transaksi\": \"TR376899\",\n            \"id_reservasi\": \"R376857\",\n            \"total\": 1330000,\n            \"metode_bayar\": \"OVO\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Transaksi",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_transaksi\": \"519\",\r\n    \"id_reservasi\": \"R0378\",\r\n    \"total\": 500000000,\r\n    \"metode_bayar\": \"OVO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3030/user/transactions/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"user",
+								"transactions",
+								""
+							]
+						},
+						"description": "Get Transaksi dari userId token payload"
+					},
+					"response": [
+						{
+							"name": "Add Transaksi",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id_transaksi\": \"519\",\r\n    \"id_reservasi\": \"R0378\",\r\n    \"total\": 500000000,\r\n    \"metode_bayar\": \"OVO\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3030/user/transactions/",
+									"host": [
+										"localhost"
+									],
+									"port": "3030",
+									"path": [
+										"user",
+										"transactions",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Dec 2022 08:24:59 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "98"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": {\n        \"id_transaksi\": \"TR519\",\n        \"id_reservasi\": \"R0378\",\n        \"total\": 500000000,\n        \"metode_bayar\": \"OVO\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Reservation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_reservasi\": \"892\",\r\n    \"id_tempat\": \"T890\",\r\n    \"id_pemilik\": \"3768\",\r\n    \"tanggal_mulai\": \"2022-12-02\",\r\n    \"tanggal_selesai\": \"2022-12-26\",\r\n    \"id_penyewa\": \"03\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3030/user/reservations/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"user",
+								"reservations",
+								""
+							]
+						},
+						"description": "Kode Reservasi\n\n\\`R${userId}{angka random}\\`"
+					},
+					"response": [
+						{
+							"name": "Add Reservation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id_reservasi\": \"892\",\r\n    \"id_tempat\": \"T890\",\r\n    \"id_pemilik\": \"3768\",\r\n    \"tanggal_mulai\": \"2022-12-02\",\r\n    \"tanggal_selesai\": \"2022-12-26\",\r\n    \"id_penyewa\": \"03\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3030/user/reservations/",
+									"host": [
+										"localhost"
+									],
+									"port": "3030",
+									"path": [
+										"user",
+										"reservations",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Dec 2022 08:23:35 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "156"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": {\n        \"id_reservasi\": \"R3768892\",\n        \"id_tempat\": \"T890\",\n        \"id_pemilik\": \"3768\",\n        \"tanggal_mulai\": \"2022-12-02\",\n        \"tanggal_selesai\": \"2022-12-26\",\n        \"id_penyewa\": \"03\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Login Test",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoiMDEiLCJ1c2VuYW1lIjoiam93bmEiLCJleHAiOjE2Njg3NjcyNTN9.hwbn6NwZU1vIEekwgXPqsM9taAwkEDigEA5VMdfTshU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"donal\",\r\n    \"password\": \"donal\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3030/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"login"
+					]
+				},
+				"description": "**ADMIN** memiliki kode 01\n\nSisanya bukan admin"
+			},
+			"response": []
+		},
+		{
+			"name": "Registration",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoiMDEiLCJ1c2VuYW1lIjoiam93bmEiLCJleHAiOjE2Njg3NjcyNTN9.hwbn6NwZU1vIEekwgXPqsM9taAwkEDigEA5VMdfTshU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_user\": \"10\",\r\n    \"username\": \"barakobama\",\r\n    \"password\": \"barakobama\",\r\n    \"nama_depan\": \"barak\",\r\n    \"nama_belakang\":\"obama\",\r\n    \"no_telp\": \"12312312\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3030/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"register"
+					]
+				},
+				"description": "**ADMIN** memiliki kode 01\n\nSisanya bukan admin"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.request.headers.add({ key: 'Access-Token', value: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoiMzc2OCIsInVzZW5hbWUiOiJkb25hbCIsImV4cCI6MTY3MDA1NjI4MX0.YtPYG1wlZJ9MsVBmoMzESpbFp_UyN63w1vnYxzaBTto' });",
+					"pm.request.headers.add({ key: 'Refresh-Token', value: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzA2NjAxODF9.-so_7ds304Kp9DmoNGuEF0Iw2sCJWDFvb0Z7ADxKuSo' });"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
