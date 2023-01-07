@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Nav, NavLink } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
+import loginImg from "../assets/login.jpg";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -54,40 +55,56 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <form className="p-5" onSubmit={handleSubmit}>
-        <div className="form-group m-5">
-          <h3 className="mb-3">Login</h3>
-          <label>Username</label>
-          <input
-            type="text"
-            className="form-control mt-1"
-            placeholder="Enter Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          <div className="form-group mt-3">
+    <div className="grid grid-cols-1 sm:grid-cols-2 h-screen w-full">
+      <div className="relative">
+        <img className="w-full h-full object-cover" src={loginImg} alt="canals" />
+        <h3 class="absolute text-lg text-slate-300 bottom-5 left-5">Picture by Pierre Blaché</h3>
+      </div>
+      <div className="bg-gray-800 flex flex-col justify-center">
+        <h2 className="text-4xl mb-5 dark:text-white font-bold text-center">
+          🏕️ Welcome to Binbi!
+        </h2>
+        <form
+          className="max-w-[400px] w-full mx-auto rounded-lg bg-gray-900 p-8 px-8"
+          onSubmit={handleSubmit}
+        >
+          <h2 className="text-4xl dark:text-white font-bold text-center">
+            Login
+          </h2>
+          <div className="flex flex-col text-gray-400 py-2">
+            <label>Username</label>
+            <input
+              className="rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none"
+              type="text"
+              placeholder="Enter Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+          <div className="flex flex-col text-gray-400 py-2">
             <label>Password</label>
             <input
+              className="p-2 rounded-lg bg-gray-700 mt-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none"
               type="password"
-              className="form-control mt-1"
               placeholder="Enter password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <div className="d-grid gap-2 mt-3">
-            <button type="submit" className="btn btn-primary">
-              Submit
-            </button>
+          <div className="flex justify-between text-gray-400 py-2">
+            <p className="flex items-center">
+              <input className="mr-2" type="checkbox" /> Remember Me
+            </p>
+            <p>Forgot Password</p>
           </div>
+          <button className="w-full mt-5 mb-2 py-2 bg-teal-500 shadow-lg shadow-teal-500/50 hover:shadow-teal-500/40 text-white font-semibold rounded-lg">
+            Login
+          </button>
           <center>
-            <Link className="d-grid gap-2 mt-3" to="/register">
-              Register
-            </Link>
+            <Link to="/register">Don't have an account? Register</Link>
           </center>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   );
 };
