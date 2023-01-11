@@ -1,5 +1,4 @@
 import { Form } from "react-bootstrap";
-import NavigationBar from "./NavigationBar";
 import BootstrapTable from "react-bootstrap-table-next";
 import cellEditFactory from "react-bootstrap-table2-editor";
 import { useEffect, useState } from "react";
@@ -75,7 +74,6 @@ const Users = () => {
 
   return (
     <div>
-      <NavigationBar />
       <div className="row ">
         <div className="col-9">
           <Form className="ms-5 ps-5 ">

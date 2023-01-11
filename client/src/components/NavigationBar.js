@@ -3,7 +3,6 @@ import { Nav, Navbar, Container, Dropdown } from "react-bootstrap";
 import { NavLink, useLocation } from "react-router-dom";
 import { Divider } from "rsuite";
 import "../../node_modules/rsuite/dist/rsuite.min.css";
-import "../constants/navItems.css";
 
 // import assets
 import avatar from "../assets/avatar.jpg";
@@ -34,8 +33,8 @@ const NavigationBar = () => {
       );
     }
   }
-  return (
-    <nav class="border-gray-200 py-0 px-0 mb-0 my-0 dark:bg-gray-900">
+  return (splitLocation[1] !== "" ? (
+    <nav class="sticky z-10 top-0 border-gray-200 py-0 px-0 mb-0 my-0 dark:bg-gray-900">
       <div class="flex items-center justify-between">
         <div className="flex items-center justify-evenly">
           <img src={logo} alt="logo" className="h-[32px] mx-5" />
@@ -54,7 +53,7 @@ const NavigationBar = () => {
             <li>
               <a
                 style={{ textDecoration: "none" }}
-                href="/dashboard"
+                href="/browse"
                 className={`block py-2 pl-3 pr-4  ${
                   splitLocation[1] === "dashboard"
                     ? "text-white"
@@ -130,8 +129,9 @@ const NavigationBar = () => {
         </div>
       </div>
     </nav>
-
-  );
+  ) : (
+    <div></div>
+  ));
 };
 
 export default NavigationBar;

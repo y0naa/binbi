@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import NavigationBar from "./NavigationBar";
 
 const Profile = () => {
   const accessToken = window.sessionStorage.getItem("accessToken");
@@ -33,7 +32,6 @@ const Profile = () => {
 
   return (
     <div>
-      <NavigationBar />
       <div className="form-group m-5 me-5 ms-5 pe-5 ps-5">
         <h3 className="mb-3">PROFILE</h3>
         <label>ID User</label>

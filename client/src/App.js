@@ -1,23 +1,27 @@
 import "./App.css";
 import "./index.css"
-import Dashboard from "./components/Dashboard";
-import Login from "./components/Login";
+import Dashboard from "./pages/Dashboard";
+import Login from "./pages/Login";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Profile from "./components/Profile";
-import Users from "./components/Users";
-import Register from "./components/Register";
-import Transactions from "./components/Transactions";
-import Orders from "./components/Orders";
+import Profile from "./pages/Profile";
+import Users from "./pages/Users";
+import Register from "./pages/Register";
+import Transactions from "./pages/Transactions";
+import Orders from "./pages/Orders";
 import AddPlace from "./components/AddPlace";
-import Home from "./components/Home";
+import Home from "./pages/Home";
+import Browse from "./pages/Browse";
+import NavigationBar from "./components/NavigationBar";
 
 
 
 function App() {
   return (
     <div>
+ 
       <BrowserRouter>
+      <NavigationBar />
         <Routes>
           <Route exact path="/" element={<Login />} />
           <Route exact path="/register" element={<Register/>} />
@@ -28,8 +32,11 @@ function App() {
           <Route exact path="/orders" element={<Orders />} />
           <Route exact path="/addPlace" element={<AddPlace />} />
           <Route exact path="/home" element={<Home />} />
+          <Route exact path="/browse" element={<Browse />} />
         </Routes>
       </BrowserRouter>
+
+   
     </div>
   );
 }

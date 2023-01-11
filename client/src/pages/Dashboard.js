@@ -1,11 +1,10 @@
-import { Form } from "react-bootstrap";
-import NavigationBar from "./NavigationBar";
+
 import BootstrapTable from "react-bootstrap-table-next";
 import cellEditFactory from "react-bootstrap-table2-editor";
 import { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import rowConsumer from "react-bootstrap-table2-editor/lib/src/row-consumer";
+
 
 const Dashboard = () => {
   const accessToken = window.sessionStorage.getItem("accessToken");
@@ -361,25 +360,7 @@ const Dashboard = () => {
     return <p></p>;
   };
 
-  const handleSearch = (event) => {
-    event.preventDefault();
-
-    if (search === null) {
-      search = "tes";
-    }
-    fetch(`http://localhost:3030/user/places?nama=${search}&lokasi=${search}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Credentials": "true",
-        "Access-Token": accessToken,
-        "Refresh-Token": refreshToken,
-      },
-    })
-      .then((response) => response.json())
-      .then((json) => setData(json.data));
-  };
+  
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -418,10 +399,10 @@ const Dashboard = () => {
       body: JSON.stringify(newData),
     }).then((response) => {
       if (response.ok) {
-        alert("Deleted successfully")
+        alert("Deleted successfully");
         window.location.reload();
       } else {
-        alert("Place has been booked unable to delete")
+        alert("Place has been booked unable to delete");
       }
     });
   };
@@ -565,25 +546,8 @@ const Dashboard = () => {
           </Button>
         </Modal.Footer>
       </Modal>
-      <NavigationBar />
-      <div className="row ">
-        <div className="col-9">
-          <Form className="ms-5 ps-5 ">
-            <Form.Control
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              type="search"
-              placeholder="Search"
-              className="ms-4"
-            />
-          </Form>
-        </div>
-        <div className="col">
-          <button onClick={handleSearch} className="btn btn-primary ms-5">
-            Search
-          </button>
-        </div>
-      </div>
+  
+      
 
       <div className="m-5">
         {

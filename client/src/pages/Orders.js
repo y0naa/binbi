@@ -1,9 +1,5 @@
 import { useEffect, useState } from "react";
-import NavigationBar from "./NavigationBar";
 import BootstrapTable from "react-bootstrap-table-next";
-import cellEditFactory from "react-bootstrap-table2-editor";
-import Button from "react-bootstrap/Button";
-import { Form } from "react-bootstrap";
 
 const Orders = () => {
   const accessToken = window.sessionStorage.getItem("accessToken");
@@ -78,7 +74,7 @@ const Orders = () => {
 
   return (
     <div>
-      <NavigationBar />
+    
   
       <div className="m-5">
       <h3>Transaksi Anda</h3>
