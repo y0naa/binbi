@@ -7,9 +7,9 @@ import { FaShower, FaHotTub } from "react-icons/fa";
 const Card = ({data}) => {
   return (
     <div className="card m-5">
-      <img className="w-full h-full object-cover" src={login} alt="test" />
+      <img className="w-full h-full object-fill" src={login} alt="test" />
       <div className=" p-2.5 flex-col gap-4">
-        {/* badge  */}
+        {/* badge */}
         <div className="flex gap-10 items-center justify-between">
           <span className="text-xl font-bold">{data.nama_tempat}</span>
           <span className="title flex-end">Rating</span>
@@ -29,7 +29,7 @@ const Card = ({data}) => {
           <span className="title flex-end">{data.air_panas}</span>
         </div>
         <div>
-          <button className="button-primary mt-3">Rent now</button>
+          <button className="button-primary mt-3">View Details</button>
         </div>
       </div>
     </div>

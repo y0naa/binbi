@@ -1,10 +1,7 @@
-
-import hero from "../assets/hero.jpg";
 import "../styles/home.css";
 const Home = () => {
   return (
     <div class="h-full ">
-
       <div className="home h-screen p-10">
         <div className="container bg-slate-800 rounded bg-opacity-80">
           <div className="flex flex-col justify-center items-center p-10 md:p-20 lg:p-24">
@@ -24,7 +21,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="container flex flex-col-reverse lg:flex-row items-center gap-12 mt-14 lg:mt-28">
+      <div className="flex flex-col-reverse lg:flex-row items-center gap-12 mt-14 lg:mt-28">
         <div id="about" className="flex flex-1 flex-col items-center ">
           <h1 className="text-cyan-700 font-extrabold text-5xl md:text-4 lg:text-6xl text-center lg:text-right mb-6">
             What is our goal?

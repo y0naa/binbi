@@ -10,11 +10,11 @@ import (
 var DB *gorm.DB
 
 func OpenConnection() {
-	db, err := gorm.Open("mysql", "root:incorrect123@tcp(127.0.0.1:3306)/rental_tempat")
+
+	db, err := gorm.Open("mysql", "root:incorrect123@tcp(host.docker.internal:3306)/rental_tempat")
 	if err != nil {
 		panic(err.Error())
 	}
 	fmt.Println("Koneksi ke database berhasil")
-	//db.AutoMigrate(&Pengguna{})
 	DB = db
 }

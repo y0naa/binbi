@@ -1,22 +1,12 @@
 import { useState, useEffect, useMemo } from "react";
 import Card from "../components/Card";
-import {dummy} from "../constants/dummy";
+import { dummy } from "../constants/dummy";
 
 const Browse = () => {
   const accessToken = window.sessionStorage.getItem("accessToken");
   const refreshToken = window.sessionStorage.getItem("refreshToken");
   const userID = window.sessionStorage.getItem("userID");
-  const [data, setData] = useState({
-    id_tempat: "",
-    id_pemilik: "",
-    nama_tempat: "",
-    lokasi_tempat: "",
-    harga_permalam: "",
-    jumlah_kamar: "",
-    jumlah_kamar_mandi: "",
-    air_panas: "false",
-    fasilitas_lain: "",
-  });
+  const [data, setData] = useState([]);
   const [search, setSearch] = useState();
   const [order, setOrder] = useState({
     id_reservasi: "tes",
@@ -27,12 +17,9 @@ const Browse = () => {
     id_penyewa: "",
   });
 
-
-
   // Methods
   const handleSearch = (event) => {
     event.preventDefault();
-
     if (search === null) {
       search = "tes";
     }
@@ -64,11 +51,8 @@ const Browse = () => {
       .then((response) => response.json())
       .then((json) => {
         setData(json.data);
-        alert("success");
-        alert(data.nama_tempat);
-        // alert(data[0].nama_tempat);
       });
-  }, [order]);
+  }, [order]); // use effect will run if data changes
 
   return (
     <div>
@@ -127,14 +111,9 @@ const Browse = () => {
       <div className="flex flex-wrap justify-center ">
         {/* {data[0].nama_tempat} */}
         <p></p>
-        {
-          dummy.map((d) => {
-            return (
-              <Card data={d}/>
-            )
-          })
-        }
-       
+        {data.map((d) => {
+          return <Card data={d} />;
+        })}
       </div>
     </div>
   );

@@ -55,7 +55,7 @@ const NavigationBar = () => {
                 style={{ textDecoration: "none" }}
                 href="/browse"
                 className={`block py-2 pl-3 pr-4  ${
-                  splitLocation[1] === "dashboard"
+                  splitLocation[1] === "browse"
                     ? "text-white"
                     : "text-gray-700"
                 } rounded dark:text-gray-400 md:dark:hover:text-white`}
