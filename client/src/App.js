@@ -9,10 +9,11 @@ import Users from "./pages/Users";
 import Register from "./pages/Register";
 import Transactions from "./pages/Transactions";
 import Orders from "./pages/Orders";
-import AddPlace from "./components/AddPlace";
+import AddPlace from "./pages/AddPlace";
 import Home from "./pages/Home";
 import Browse from "./pages/Browse";
 import NavigationBar from "./components/NavigationBar";
+import Details from "./pages/Details";
 
 
 
@@ -33,6 +34,7 @@ function App() {
           <Route exact path="/addPlace" element={<AddPlace />} />
           <Route exact path="/home" element={<Home />} />
           <Route exact path="/browse" element={<Browse />} />
+          <Route exact path="/details" element={<Details />} />
         </Routes>
       </BrowserRouter>
 

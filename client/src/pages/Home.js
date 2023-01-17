@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 import "../styles/home.css";
 const Home = () => {
   return (
-    <div class="h-full ">
+    <div class="h-full">
       <div className="home h-screen p-10">
         <div className="container bg-slate-800 rounded bg-opacity-80">
           <div className="flex flex-col justify-center items-center p-10 md:p-20 lg:p-24">
@@ -33,20 +34,18 @@ const Home = () => {
             Our goal is to provide you with the greatest travel experiences from
             accomodations to hotels and flights.
           </p>
-          <a
-            type="button"
-            href="/dashboard"
-            className="shadow-md py-3 px-6 rounded-md bg-slate-800 text-white"
-          >
-            Browse Places
-          </a>
+          <Link to="/browse">
+            <button className="shadow-md py-3 px-6 rounded-md bg-slate-800 text-white hover:bg-blue-700">
+              Browse Places
+            </button>
+          </Link>
 
           <p className="mt-80  text-slade 800 text-sm text-center mb-6 bg-white rounded px-5 py-2">
-            This project is built for educational purposes only as a requirement for Web Technology final project
+            This project is built for educational purposes only as a requirement
+            for Web Technology final project
           </p>
         </div>
       </div>
-      <section className="relative"></section>
 
       <footer class="p-4 bg-gray-800 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">
         <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">

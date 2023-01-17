@@ -1,11 +1,10 @@
 import { useState, useEffect, useMemo } from "react";
 import Card from "../components/Card";
-import { dummy } from "../constants/dummy";
 
 const Browse = () => {
   const accessToken = window.sessionStorage.getItem("accessToken");
   const refreshToken = window.sessionStorage.getItem("refreshToken");
-  const userID = window.sessionStorage.getItem("userID");
+ // const userID = window.sessionStorage.getItem("userID");
   const [data, setData] = useState([]);
   const [search, setSearch] = useState();
   const [order, setOrder] = useState({
@@ -56,7 +55,9 @@ const Browse = () => {
 
   return (
     <div>
+      
       <div className="row m-3">
+  
         <form class="flex items-center m-1">
           <div class="relative w-full rounded-">
             <div class="absolute inset-y-0 left-2 flex items-center pl-3 pointer-events-none">
@@ -106,6 +107,8 @@ const Browse = () => {
           </button>
         </form>
       </div>
+
+      <h1 className="text-3xl ml-10">Browse Places</h1>
 
       {/* Cards */}
       <div className="flex flex-wrap justify-center ">
