@@ -108,12 +108,11 @@ const Browse = () => {
         </form>
       </div>
 
-      <h1 className="text-3xl ml-10">Browse Places</h1>
+      <h1 className="font-serif font-bold mx-5">Browse Places</h1>
 
       {/* Cards */}
       <div className="flex flex-wrap justify-center ">
-        {/* {data[0].nama_tempat} */}
-        <p></p>
+     
         {data.map((d) => {
           return <Card data={d} />;
         })}

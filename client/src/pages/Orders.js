@@ -11,27 +11,27 @@ const Orders = () => {
   const columns = [
     {
       dataField: "id_reservasi",
-      text: "ID Reservasi",
+      text: "Reservation ID",
     },
     {
       dataField: "id_tempat",
-      text: "ID Tempat",
+      text: "Place ID",
     },
     {
       dataField: "id_pemilik",
-      text: "id_pemilik",
+      text: "Your ID",
     },
     {
       dataField: "tanggal_mulai",
-      text: "Tanggal Mulai",
+      text: "Check-in Date",
     },
     {
       dataField: "tanggal_selesai",
-      text: "Tanggal Selesai",
+      text: "Check-out Date",
     },
     {
       dataField: "id_penyewa",
-      text: "ID Penyewa",
+      text: "Tenant ID",
     },
   ];
 
@@ -77,7 +77,7 @@ const Orders = () => {
     
   
       <div className="m-5">
-      <h3>Transaksi Anda</h3>
+      <h1 className="font-serif font-bold">Your Renting History</h1>
         {
           //memastikan data ada isinya
           data && (
