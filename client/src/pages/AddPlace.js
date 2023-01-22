@@ -1,17 +1,44 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PlaceDetails from "../components/Add-Place/PlaceDetails";
 import ConfirmationDetails from "../components/Add-Place/ConfirmationDetails";
 
 const AddPlace = () => {
+  const userID = window.sessionStorage.getItem("userID");
+
+  function generateID() {
+    var num = Math.floor(Math.random() * 10000)
+    return `T${num.toString()}` 
+  }
+  const [newData, changeData] = useState({
+    id_tempat: generateID(),
+    id_pemilik: { userID },
+    nama_tempat: "",
+    lokasi_tempat: "",
+    harga_permalam: "",
+    jumlah_kamar: "",
+    jumlah_kamar_mandi: "",
+    air_panas: "false",
+    fasilitas_lain: "",
+  });
   const [step, setStep] = useState(0);
 
   const StepDisplay = () => {
     if (step === 0) {
-      return <PlaceDetails />;
+      return (
+        <PlaceDetails
+          newData={newData}
+          changeData={changeData}
+        />
+      );
     } else {
-      return <ConfirmationDetails />;
+      return <ConfirmationDetails newData={newData} />;
     }
   };
+  // useEffect(() => {
+  //   alert(generateID());
+  // }, [])
+  
+
   return (
     <div className="form">
       <div className="progressBar"></div>

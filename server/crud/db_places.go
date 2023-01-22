@@ -17,15 +17,17 @@ func GetPlaces(c *gin.Context) {
 	var places []Tempat
 	var place Tempat
 
-	if nama != "undefined" && lokasi != "undefined" || nama == "" && lokasi == "" {
-		DB.Table("tempat").Where("nama_tempat LIKE '%" + nama + "%'" + "OR lokasi_tempat LIKE '%" + lokasi + "%'").Find(&places)
-		c.JSON(http.StatusOK, gin.H{"data": places})
-	} else if idTempat != "undefined" || idTempat != "" {
-		DB.Table("pengguna").Where("id_tempat = ?", idTempat).First(&place)
+	if idTempat != "" && idTempat != "undefined" {
+		DB.Table("tempat").Where("id_tempat = ?", idTempat).First(&place)
 		c.JSON(http.StatusOK, gin.H{"data": place})
 	} else {
-		DB.Table("tempat").Find(&places)
-		c.JSON(http.StatusOK, gin.H{"data": places})
+		if nama != "undefined" && lokasi != "undefined" || nama == "" && lokasi == "" {
+			DB.Table("tempat").Where("nama_tempat LIKE '%" + nama + "%'" + "OR lokasi_tempat LIKE '%" + lokasi + "%'").Find(&places)
+			c.JSON(http.StatusOK, gin.H{"data": places})
+		} else {
+			DB.Table("tempat").Find(&places)
+			c.JSON(http.StatusOK, gin.H{"data": places})
+		}
 	}
 
 }

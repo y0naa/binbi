@@ -119,7 +119,6 @@ const NavigationBar = () => {
 
             <Dropdown.Menu>
               <Dropdown.Item href="/profile">Profile</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Settings</Dropdown.Item>
               <Divider className="mt-3 mb-2"></Divider>
               <Dropdown.Item href="/">
                 <p class=" text-danger">Logout</p>

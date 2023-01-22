@@ -13,7 +13,6 @@ const Card = ({ data }) => {
         {/* badge */}
         <div className="flex gap-10 items-center justify-between">
           <span className="text-xl font-bold">{data.nama_tempat}</span>
-      
         </div>
         <p className="text-slate-700 m-0">{data.lokasi_tempat}</p>
         <p className="text-gray-500 m-0">Rp. {data.harga_permalam}</p>
@@ -32,7 +31,7 @@ const Card = ({ data }) => {
           <span className="title flex-end">{data.air_panas}</span>
         </div>
         <div>
-          <Link to="/details">
+          <Link to="/details" state={{ prop: data }}>
             <button className="button-primary mt-3">View Details</button>
           </Link>
         </div>
