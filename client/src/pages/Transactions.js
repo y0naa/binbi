@@ -32,24 +32,6 @@ const Transactions = () => {
     },
   ];
 
-  const handleSearch = (event) => {
-    event.preventDefault();
-    if (search == null) {
-      search = "";
-    }
-    fetch("http://localhost:3030/admin/transactions", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Credentials": "true",
-        "Access-Token": accessToken,
-        "Refresh-Token": refreshToken,
-      },
-    })
-      .then((response) => response.json())
-      .then((json) => setData(json.data));
-  };
 
   useEffect(() => {
     // Fetch Metode Bayar & total
@@ -120,7 +102,10 @@ const Transactions = () => {
 
       <div>
 
-        {location.map((item, index) => (
+        {
+        location.length < 1 ? 
+  <h3 className="text-center text-lg">Sorry you don't have any transactions yet</h3>       
+        : location.map((item, index) => (
           <div key={index}>
             <History loc={item} trans={data[index]} res={tempPlaces[index]} />;
           </div>

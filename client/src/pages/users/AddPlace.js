@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import PlaceDetails from "../components/Add-Place/PlaceDetails";
-import ConfirmationDetails from "../components/Add-Place/ConfirmationDetails";
+import PlaceDetails from "../../components/Add-Place/PlaceDetails";
+import ConfirmationDetails from "../../components/Add-Place/ConfirmationDetails";
 
 const AddPlace = () => {
   const userID = window.sessionStorage.getItem("userID");

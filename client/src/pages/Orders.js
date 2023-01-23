@@ -77,10 +77,12 @@ const Orders = () => {
     
   
       <div className="m-5">
-      <h1 className="font-serif font-bold">Your Renting History</h1>
+      <h1 className="font-serif mb-5 font-bold">Your Renting Orders</h1>
         {
+          data.length < 1 ?
+          <h3 className="text-center text-lg">Sorry, you don't have any orders yet</h3>
           //memastikan data ada isinya
-          data && (
+          : data && (
             <BootstrapTable
               keyField="id_reservasi"
               data={data}

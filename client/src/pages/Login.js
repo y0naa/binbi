@@ -39,7 +39,7 @@ const Login = () => {
 
     let response = await res.json();
     if (response.message == "success") {
-      navigate("/dashboard");
+      navigate("/home");
       window.sessionStorage.setItem(
         "accessToken",
         token.accessToken.toString()
