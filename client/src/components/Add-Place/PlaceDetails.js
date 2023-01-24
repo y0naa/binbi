@@ -1,13 +1,11 @@
-import axios, * as others from "axios";
+import CurrencyInput from "react-currency-input-field";
 import React, { useEffect, useState } from "react";
 import { FaCity } from "react-icons/fa";
 import { GrMapLocation } from "react-icons/gr";
 import { MdOutlineLocalPostOffice } from "react-icons/md";
-import { Image } from "cloudinary-react";
 
 const PlaceDetails = ({ newData, changeData }) => {
   const [locationDetails, setLocation] = useState([]);
- 
 
   const Question = (text, type, newData, changeData) => {
     return (
@@ -36,15 +34,10 @@ const PlaceDetails = ({ newData, changeData }) => {
     setLocation(newArray);
   };
 
-
-
   useEffect(() => {
     setLocation(newData.lokasi_tempat.split(", "));
-  
-      document.body.style.overflow='scroll'
-    
-  
-  
+
+    document.body.style.overflow = "scroll";
   }, []);
 
   return (
@@ -194,19 +187,32 @@ const PlaceDetails = ({ newData, changeData }) => {
         </div>
         <div className="w-full rounded-md flex items-center justify-center justify-items-center my-5 shadow-md px-3 pt-4 shadow-red-300">
           <h3 className="my-3 mr-5 text-cyan-600">Pricing</h3>
-          {Question("Rp.", "number", newData.harga_permalam, (e) => {
+          {/* {Question("Rp.", "number", newData.harga_permalam, (e) => {
             changeData((state) => ({
               ...state,
               harga_permalam: e.target.value,
             }));
-          })}
+          })} */}
+
+          <CurrencyInput
+            className="border-t-0 border-l-0 border-r-0 block py-2.5 px-0 w-full text-sm text-black bg-transparent border-b-2 border-cyan-600 appearance-none dark:text-white dark:border-gray-600 dark:focus: focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            prefix="Rp. "
+            allowDecimals="true"
+            allowNegativeValue="false"
+            value={newData.harga_permalam}
+            onValueChange={(value) => {
+              changeData((state) => ({
+                ...state,
+                harga_permalam: value,
+              }));
+            }}
+          ></CurrencyInput>
+
           <label class="block mb-2 text-sm font-medium text-gray-900 w-1/5">
             / night(s)
           </label>
         </div>
-        <div class="flex justify-center">
-        
-        </div>
+        <div class="flex justify-center"></div>
       </div>
     </div>
   );

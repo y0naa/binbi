@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import BlockUi from "react-block-ui";
-import { Link } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
 
 const ConfirmationDetails = ({ newData }) => {
@@ -100,7 +98,7 @@ const ConfirmationDetails = ({ newData }) => {
             <div className="w-full w-max-1/2 rounded-md flex justify-start items-center">
               <h3 className="my-3 mr-5 text-red-500 text-xl">Price/night: </h3>
               <label class="text-lg w-max-fit font-medium text-gray-900">
-                Rp. {newData.harga_permalam}
+                Rp. {parseFloat(newData.harga_permalam).toLocaleString()}
               </label>
             </div>
             <div class="mb-3 w-96">

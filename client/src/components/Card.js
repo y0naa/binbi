@@ -7,14 +7,14 @@ import { Link } from "react-router-dom";
 const Card = ({ data }) => {
   return (
     <div className="card m-5 ">
-      <img className="w-full h-full object-fill" src={data.url_gambar} alt="test" />
+      <img className="w-full h-full object-contain" src={data.url_gambar} alt="test" />
       <div className=" p-2.5 flex-col gap-4">
         {/* badge */}
         <div className="flex gap-10 items-center justify-between">
           <span className="text-xl font-bold">{data.nama_tempat}</span>
         </div>
         <p className="text-slate-700 m-0">{data.lokasi_tempat}</p>
-        <p className="text-gray-500 m-0">Rp. {data.harga_permalam}</p>
+        <p className="text-gray-500 m-0">Rp. {parseFloat(data.harga_permalam).toLocaleString('en')}</p>
         <div className="flex items-center justify-start mt-2">
           <BiBed />
           <span className="title flex-end">{data.jumlah_kamar} Kamar</span>

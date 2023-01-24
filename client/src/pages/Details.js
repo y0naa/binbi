@@ -156,7 +156,7 @@ const Details = () => {
 
             <div className="flex-col">
               <h3 className="text-cyan-600 my-3">
-                Rp. {prop.harga_permalam}
+                Rp. {parseFloat(prop.harga_permalam).toLocaleString()}
                 <span className="text-lg text-gray-600"> /night</span>
               </h3>
               <div className="flex-row border-2 shadow-md rounded-xl p-16">
@@ -202,7 +202,7 @@ const Details = () => {
                 </select>
 
                 <p className="mt-5 text-red-600">Total Payment:</p>
-                <p className=" text-black text-lg"> Rp. {total}</p>
+                <p className=" text-black text-lg"> Rp. {total.toLocaleString()}</p>
                 <button className="button-primary mt-3" type="submit">
                   Rent Now
                 </button>

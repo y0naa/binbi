@@ -22,7 +22,7 @@ const History = ({ loc, trans, res }) => {
           <span className="text-black">{trans.metode_bayar}</span>
         </p>
         <p className="text-lg text-red-600">
-          Total: <span className="text-black"> Rp. {trans.total}</span>
+          Total: <span className="text-black"> Rp. {parseFloat(trans.total).toLocaleString()}</span>
         </p>
       </div>
     </div>
