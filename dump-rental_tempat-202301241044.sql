@@ -45,7 +45,7 @@ CREATE TABLE `detail_reservasi` (
 
 LOCK TABLES `detail_reservasi` WRITE;
 /*!40000 ALTER TABLE `detail_reservasi` DISABLE KEYS */;
-INSERT INTO `detail_reservasi` VALUES ('R0103','T01','02','2022-12-02','2022-12-26','01'),('R0105','T01','02','2022-12-02','2022-12-26','03'),('R0301','T01','02','2022-12-02','2022-12-26','03'),('R0302','T01','02','2022-12-02','2022-12-26','03'),('R0378','T05','3768','2022-12-02','2022-12-09','03'),('R376815','T05','3768','2022-12-02','2022-12-08','3768'),('R376823','T01','02','2022-12-02','2022-12-09','3768'),('R37683','T05','3768','2022-12-02','2022-12-09','3768'),('R376842','T03','01','2022-12-02','2022-12-09','3768'),('R376850','T01','02','2022-12-02','2022-12-16','3768'),('R376855','T01','02','2022-12-08','2022-12-16','3768'),('R376857','T05','3768','2022-12-09','2022-12-16','3768'),('R376862','T01','02','2022-12-02','2022-12-08','3768'),('R376873','T03','01','2022-12-02','2022-12-09','3768'),('R376876','T01','02','2022-12-02','2022-12-09','3768'),('R376879','T01','02','2022-12-02','2022-12-03','3768'),('R376888','T11','3768','2022-12-01','2022-12-09','3768'),('R3768892','T890','3768','2022-12-02','2022-12-26','03'),('R376899','T01','02','2022-12-02','2022-12-09','3768');
+INSERT INTO `detail_reservasi` VALUES ('R37687347','TT9833','3768','2023-01-04','2023-01-19','3768'),('R9874748','TT9833','3768','2023-01-03','2023-01-15','987');
 /*!40000 ALTER TABLE `detail_reservasi` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -74,7 +74,7 @@ CREATE TABLE `pengguna` (
 
 LOCK TABLES `pengguna` WRITE;
 /*!40000 ALTER TABLE `pengguna` DISABLE KEYS */;
-INSERT INTO `pengguna` VALUES ('01','jowna','admin123','Jowna','Alynsah','081232321'),('02','yefta','yefta123','Johanes','Yefta','081231232'),('03','halo','tes123','halo','halob','08123123123'),('04','halo2','tes123','halo3','halo2','08123123123'),('05','tes','tes123','tes1','tes2','0129301293'),('06','halo223','tes12332','halo33','halo32','081231231233'),('10','barakobama','barakobama','barak','obama','12312312'),('2798','ujjj','weqe','qweqwe','qweqwe','312'),('3768','donal','donal','donal','trump','1231231');
+INSERT INTO `pengguna` VALUES ('01','jowna','admin123','Jowna','Alynsah','081232321'),('02','yefta','yefta123','Johanes','Yefta','081231232'),('03','halo','tes123','halo','halob','08123123123'),('04','halo2','tes123','halo3','halo2','08123123123'),('05','tes','tes123','tes1','tes2','0129301293'),('06','halo223','tes12332','halo33','halo32','081231231233'),('10','barakobama','barakobama','barak','obama','12312312'),('13','nadia','nadia123','nadia','speransa','08312311323'),('2798','ujjj','weqe','qweqwe','qweqwe','312'),('3597','halo34','halohalo','halo1','halo2','0812312312'),('3768','donal','donal','donal','trump','1231231'),('7240','hny','hny','hny','2023','08123123123'),('987','christiano','chris','christiano','ronaldo','62542421388');
 /*!40000 ALTER TABLE `pengguna` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -95,7 +95,9 @@ CREATE TABLE `tempat` (
   `jumlah_kamar_mandi` varchar(100) NOT NULL,
   `air_panas` tinyint(1) NOT NULL,
   `fasilitas_lain` varchar(250) NOT NULL,
+  `url_gambar` varchar(255) NOT NULL DEFAULT 'https://res.cloudinary.com/binbi/image/upload/v1674476489/tsqeulkkz0a9oyu90epe.png',
   PRIMARY KEY (`id_tempat`),
+  UNIQUE KEY `tempat_UN` (`nama_tempat`),
   KEY `tempat_FK` (`id_pemilik`),
   CONSTRAINT `tempat_FK` FOREIGN KEY (`id_pemilik`) REFERENCES `pengguna` (`id_user`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -107,7 +109,7 @@ CREATE TABLE `tempat` (
 
 LOCK TABLES `tempat` WRITE;
 /*!40000 ALTER TABLE `tempat` DISABLE KEYS */;
-INSERT INTO `tempat` VALUES ('T01','02','Villa23','Puncak244','5000000','4','9',1,'kolam'),('T03','02','Villae2','Puncak2','50000','6','5',1,'kolam'),('T05','3768','Tes','Tes','190000','5','5',1,'Kolam ikan'),('T11','3768','asd','asdasd','229','3123','123',1,'fsdfs'),('T890','3768','sunlake','sunter','450000','1','1',1,'kolam');
+INSERT INTO `tempat` VALUES ('T01','02','Villa23','Puncak244','5000000','4','9',1,'kolam','https://res.cloudinary.com/binbi/image/upload/v1674476489/tsqeulkkz0a9oyu90epe.png'),('T03','02','Villae2','Puncak2','50000','6','5',1,'kolam','https://res.cloudinary.com/binbi/image/upload/v1674476489/tsqeulkkz0a9oyu90epe.png'),('T05','3768','Tes','Tes','190000','5','5',1,'Kolam ikan','https://res.cloudinary.com/binbi/image/upload/v1674476489/tsqeulkkz0a9oyu90epe.png'),('T11','3768','asd','asdasd','229','3123','123',1,'fsdfs','https://res.cloudinary.com/binbi/image/upload/v1674476489/tsqeulkkz0a9oyu90epe.png'),('T12','3768','greenlake','sunter','600000','1','1',1,'kolam','https://res.cloudinary.com/binbi/image/upload/v1674476489/tsqeulkkz0a9oyu90epe.png'),('T890','3768','sunlake','sunter','450000','1','1',1,'kolam','https://res.cloudinary.com/binbi/image/upload/v1674476489/tsqeulkkz0a9oyu90epe.png'),('TT1766','3768','yo','23, 3, 23, 2','33','23','3',1,'3','https://res.cloudinary.com/binbi/image/upload/v1674476489/tsqeulkkz0a9oyu90epe.png'),('TT1790','3768','fds','sdfdsf, 1213, 2, 23211','2','2','3',1,'3','https://res.cloudinary.com/binbi/image/upload/v1674476489/tsqeulkkz0a9oyu90epe.png'),('TT2433','3768','w','ew, w, e, undefined','232','2','3',1,'32','https://res.cloudinary.com/binbi/image/upload/v1674476489/tsqeulkkz0a9oyu90epe.png'),('TT3895','3768','4','2434, 423, 23, 34','4334','3','4234',1,'34','https://res.cloudinary.com/binbi/image/upload/v1674477368/nuapcnje4eqs5qwrrmwe.png'),('TT4007','3768','d','2, d, d, 23','323','3','3',1,'3','https://res.cloudinary.com/binbi/image/upload/v1674476489/tsqeulkkz0a9oyu90epe.png'),('TT577','3768','tesd','312, 312, 231, 32','23','231','23',0,'23','https://res.cloudinary.com/binbi/image/upload/v1674479917/ezqouwv4uawhlpnmnl2c.jpg'),('TT6049','3768','2312','32, 2, 233, 32','3','3','23',1,'3','https://res.cloudinary.com/binbi/image/upload/v1674476489/tsqeulkkz0a9oyu90epe.png'),('TT7376','3768','2','3, 2, 3, 3','2','2','3',0,'3','https://res.cloudinary.com/binbi/image/upload/v1674476489/tsqeulkkz0a9oyu90epe.png'),('TT7426','3768','omg','32, 22, 23, 3','331','32','3',1,'32','https://res.cloudinary.com/binbi/image/upload/v1674476489/tsqeulkkz0a9oyu90epe.png'),('TT8786','3768','Himalayas','India, Nepal, China, Bhutan, Khardung, Rohtang LA , 12312','4999999','2','2',0,'Mountains','https://res.cloudinary.com/binbi/image/upload/v1674477298/orm32ri3gydpfnwohatz.jpg'),('TT8940','3768','def','ds, undefined, sd, undefined','22','2','22',1,'e','https://res.cloudinary.com/binbi/image/upload/v1674476489/tsqeulkkz0a9oyu90epe.png'),('TT9833','3768','Gumaya','Gumaya Tower Hotel, Jl. Gajahmada No.59-61, Jawa Tengah, Semarang, 15572','800000','4','3',0,'Kolam Renang','https://res.cloudinary.com/binbi/image/upload/v1674476489/tsqeulkkz0a9oyu90epe.png');
 /*!40000 ALTER TABLE `tempat` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -135,7 +137,7 @@ CREATE TABLE `transaksi` (
 
 LOCK TABLES `transaksi` WRITE;
 /*!40000 ALTER TABLE `transaksi` DISABLE KEYS */;
-INSERT INTO `transaksi` VALUES ('TR01','R0301',232312312,'OVO'),('TR02','R0302',123123123,'ShopeePay'),('TR0354','R0378',1330000,'Transfer'),('TR04','R0103',232312322,'OVO'),('TR376817','R376873',350000,'Transfer'),('TR37682','R376876',35000000,'OVO'),('TR376843','R37683',1330000,'ShopeePay'),('TR376878','R376888',1832,'Transfer'),('TR376889','R376815',1140000,'Transfer'),('TR376899','R376857',1330000,'OVO'),('TR519','R0378',500000000,'OVO');
+INSERT INTO `transaksi` VALUES ('TR37683184','R37687347',12000000,'Transfer'),('TR9873055','R9874748',9600000,'Transfer');
 /*!40000 ALTER TABLE `transaksi` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -152,4 +154,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-12-03 15:41:29
+-- Dump completed on 2023-01-24 10:44:40
