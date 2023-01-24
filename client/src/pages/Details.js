@@ -115,8 +115,8 @@ const Details = () => {
       <div className="flex items-stretch justify-evenly">
         <div className="flex m-5 flex-col">
           <img
-            className="object-fill rounded-xl max-h-96"
-            src={login}
+            className="object-contain rounded-xl max-h-96"
+            src={prop.url_gambar}
             alt="test"
           />
 

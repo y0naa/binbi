@@ -4,10 +4,11 @@ import ConfirmationDetails from "../../components/Add-Place/ConfirmationDetails"
 
 const AddPlace = () => {
   const userID = window.sessionStorage.getItem("userID");
+  
 
   function generateID() {
-    var num = Math.floor(Math.random() * 10000)
-    return `T${num.toString()}` 
+    var num = Math.floor(Math.random() * 10000);
+    return `T${num.toString()}`;
   }
   const [newData, changeData] = useState({
     id_tempat: generateID(),
@@ -19,25 +20,22 @@ const AddPlace = () => {
     jumlah_kamar_mandi: "",
     air_panas: "false",
     fasilitas_lain: "",
+    url_gambar: ""
   });
   const [step, setStep] = useState(0);
 
   const StepDisplay = () => {
     if (step === 0) {
-      return (
-        <PlaceDetails
-          newData={newData}
-          changeData={changeData}
-        />
-      );
+      return <PlaceDetails newData={newData} changeData={changeData} />;
     } else {
       return <ConfirmationDetails newData={newData} />;
     }
   };
+
+  
   // useEffect(() => {
   //   alert(generateID());
   // }, [])
-  
 
   return (
     <div className="form">

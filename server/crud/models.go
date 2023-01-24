@@ -20,6 +20,7 @@ type Tempat struct {
 	JumlahKamarMandi int32   `json:"jumlah_kamar_mandi,string"`
 	AirPanas         bool    `json:"air_panas,string"`
 	FasilitasLain    string  `json:"fasilitas_lain"`
+	UrlGambar        string  `json:"url_gambar"`
 }
 
 type DetailReservasi struct {

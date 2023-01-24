@@ -1,10 +1,13 @@
+import axios, * as others from "axios";
 import React, { useEffect, useState } from "react";
 import { FaCity } from "react-icons/fa";
 import { GrMapLocation } from "react-icons/gr";
 import { MdOutlineLocalPostOffice } from "react-icons/md";
+import { Image } from "cloudinary-react";
 
 const PlaceDetails = ({ newData, changeData }) => {
   const [locationDetails, setLocation] = useState([]);
+ 
 
   const Question = (text, type, newData, changeData) => {
     return (
@@ -33,9 +36,15 @@ const PlaceDetails = ({ newData, changeData }) => {
     setLocation(newArray);
   };
 
+
+
   useEffect(() => {
     setLocation(newData.lokasi_tempat.split(", "));
-    //alert(newData.air_panas);
+  
+      document.body.style.overflow='scroll'
+    
+  
+  
   }, []);
 
   return (
@@ -56,19 +65,14 @@ const PlaceDetails = ({ newData, changeData }) => {
           }
         )}
         <div className="shadow-md  rounded-md w-full p-3 mb-10">
-          <h3 className="my-3 text-cyan-600">
-            Location Details
-          </h3>
+          <h3 className="my-3 text-cyan-600">Location Details</h3>
           <hr></hr>
           <div className="flex flex-row justify-items-stretch w-full ">
             <div className="flex items-center w-full">
               <FaCity />
               <div className="mr-3"></div>
-              {Question(
-                "Enter your City",
-                "text",
-                locationDetails[2],
-                (e) => appendToIndex(2, e.target.value)
+              {Question("Enter your City", "text", locationDetails[2], (e) =>
+                appendToIndex(2, e.target.value)
               )}
             </div>
             <div className="px-10"></div>
@@ -189,23 +193,19 @@ const PlaceDetails = ({ newData, changeData }) => {
           ></textarea>
         </div>
         <div className="w-full rounded-md flex items-center justify-center justify-items-center my-5 shadow-md px-3 pt-4 shadow-red-300">
-          <h3 className="my-3 mr-5 text-cyan-600">
-            Pricing
-          </h3>
-          {Question(
-            "Rp.",
-            "number",
-            newData.harga_permalam,
-            (e) => {
-              changeData((state) => ({
-                ...state,
-                harga_permalam: e.target.value,
-              }));
-            }
-          )}
+          <h3 className="my-3 mr-5 text-cyan-600">Pricing</h3>
+          {Question("Rp.", "number", newData.harga_permalam, (e) => {
+            changeData((state) => ({
+              ...state,
+              harga_permalam: e.target.value,
+            }));
+          })}
           <label class="block mb-2 text-sm font-medium text-gray-900 w-1/5">
             / night(s)
           </label>
+        </div>
+        <div class="flex justify-center">
+        
         </div>
       </div>
     </div>
