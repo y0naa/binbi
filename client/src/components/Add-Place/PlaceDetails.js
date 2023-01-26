@@ -4,19 +4,23 @@ import { FaCity } from "react-icons/fa";
 import { GrMapLocation } from "react-icons/gr";
 import { MdOutlineLocalPostOffice } from "react-icons/md";
 
-const PlaceDetails = ({ newData, changeData }) => {
-  const [locationDetails, setLocation] = useState([]);
-
-  const Question = (text, type, newData, changeData) => {
+const PlaceDetails = ({
+  newData,
+  changeData,
+  locationDetails,
+  setLocation,
+}) => {
+  const Question = (text, type, newData, changeData, min = "0") => {
     return (
       <div class="relative z-0 w-full mb-6 group ">
         <input
+          required
           class="border-t-0 border-l-0 border-r-0 block py-2.5 px-0 w-full text-sm text-black bg-transparent border-b-2 border-cyan-600 appearance-none dark:text-white dark:border-gray-600 dark:focus: focus:outline-none focus:ring-0 focus:border-blue-600 peer"
           placeholder=" "
           type={type}
-          required
           value={newData}
           onChange={changeData}
+          min={min}
         />
         <label
           for="floating_email"
@@ -28,15 +32,13 @@ const PlaceDetails = ({ newData, changeData }) => {
     );
   };
 
-  const appendToIndex = (index, string) => {
-    const newArray = [...locationDetails];
-    newArray[index] = string;
-    setLocation(newArray);
-  };
-
   useEffect(() => {
-    setLocation(newData.lokasi_tempat.split(", "));
-
+    
+    const arr = newData.lokasi_tempat.split(", ");
+    locationDetails.loc1 = arr[0];
+    locationDetails.loc2 = arr[1];
+    locationDetails.loc3 = arr[2];
+    locationDetails.loc4 = arr[3];
     document.body.style.overflow = "scroll";
   }, []);
 
@@ -64,8 +66,16 @@ const PlaceDetails = ({ newData, changeData }) => {
             <div className="flex items-center w-full">
               <FaCity />
               <div className="mr-3"></div>
-              {Question("Enter your City", "text", locationDetails[2], (e) =>
-                appendToIndex(2, e.target.value)
+              {Question(
+                "Enter your City",
+                "text",
+                locationDetails.loc2,
+                (e) => {
+                  setLocation((state) => ({
+                    ...state,
+                    loc2: e.target.value,
+                  }));
+                }
               )}
             </div>
             <div className="px-10"></div>
@@ -75,8 +85,13 @@ const PlaceDetails = ({ newData, changeData }) => {
               {Question(
                 "Enter your State/Province",
                 "text",
-                locationDetails[1],
-                (e) => appendToIndex(1, e.target.value)
+                locationDetails.loc3,
+                (e) => {
+                  setLocation((state) => ({
+                    ...state,
+                    loc3: e.target.value,
+                  }));
+                }
               )}
             </div>
             <div className="px-10"></div>
@@ -86,27 +101,24 @@ const PlaceDetails = ({ newData, changeData }) => {
               {Question(
                 "Enter your postal code",
                 "number",
-                locationDetails[3],
-                (e) => appendToIndex(3, e.target.value)
+                locationDetails.loc4,
+                (e) => {
+                  setLocation((state) => ({
+                    ...state,
+                    loc4: e.target.value,
+                  }));
+                }
               )}
             </div>
           </div>
           {Question(
             "What's the street address?",
             "text",
-            locationDetails[0],
+            locationDetails.loc1,
             (e) => {
-              appendToIndex(0, e.target.value);
-              changeData((state) => ({
+              setLocation((state) => ({
                 ...state,
-                lokasi_tempat:
-                  e.target.value +
-                  ", " +
-                  locationDetails[1] +
-                  ", " +
-                  locationDetails[2] +
-                  ", " +
-                  locationDetails[3],
+                loc1: e.target.value,
               }));
             }
           )}
@@ -120,7 +132,9 @@ const PlaceDetails = ({ newData, changeData }) => {
                 Number of rooms?
               </label>
               <input
+                required
                 type="number"
+                min
                 id="base-input"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                 value={newData.jumlah_kamar}
@@ -138,6 +152,7 @@ const PlaceDetails = ({ newData, changeData }) => {
                 Number of bathrooms/showers?
               </label>
               <input
+                required
                 type="number"
                 id="base-input"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
@@ -195,6 +210,7 @@ const PlaceDetails = ({ newData, changeData }) => {
           })} */}
 
           <CurrencyInput
+            required
             className="border-t-0 border-l-0 border-r-0 block py-2.5 px-0 w-full text-sm text-black bg-transparent border-b-2 border-cyan-600 appearance-none dark:text-white dark:border-gray-600 dark:focus: focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             prefix="Rp. "
             allowDecimals="true"

@@ -10,6 +10,28 @@ const ConfirmationDetails = ({ newData }) => {
   const [loading, setLoading] = useState(false);
   let [color, setColor] = useState("#ffffff");
 
+  const submit = () => {
+    fetch("http://localhost:3030/user/places", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Token": accessToken,
+        "Refresh-Token": refreshToken,
+      },
+      body: JSON.stringify(newData),
+    }).then((response) => {
+      if (response.ok) {
+        alert("Data saved successfully");
+        window.location.reload();
+      } else {
+        alert("Something went wrong, make sure you have inputted correctly");
+        window.location.reload();
+      }
+    });
+  };
+
   const Tag = (title, desc) => {
     return (
       <div className="w-full w-max-1/2 rounded-md flex justify-start items-center">
@@ -23,10 +45,16 @@ const ConfirmationDetails = ({ newData }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    
+
     setLoading(true);
     newData.id_pemilik = userID;
-    await uploadImage();
+    if (newData.url_gambar.length < 1) {
+      newData.url_gambar =
+        "https://res.cloudinary.com/binbi/image/upload/v1674476489/tsqeulkkz0a9oyu90epe.png";
+      submit();
+    } else {
+      await uploadImage();
+    }
   };
 
   const uploadImage = async () => {
@@ -44,42 +72,17 @@ const ConfirmationDetails = ({ newData }) => {
     const json = await response.json();
     const { secure_url } = json;
     newData.url_gambar = secure_url;
-    fetch("http://localhost:3030/user/places", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Credentials": "true",
-        "Access-Token": accessToken,
-        "Refresh-Token": refreshToken,
-      },
-      body: JSON.stringify(newData),
-    }).then((response) => {
-      if (response.ok) {
-        alert("Data saved successfully");
-        window.location.reload();
-      } else {
-        alert("Something went wrong");
-      }
-    });
+    submit();
   };
   useEffect(() => {
-    document.body.style.overflow='hidden'
-  
-
-  }, [])
-  
+    document.body.style.overflow = "hidden";
+  }, []);
 
   return (
     <form className="flex flex-col items-center" onSubmit={handleSubmit}>
       {loading ? (
         <div className="flex sweet-loading h-screen w-screen justify-center items-center">
-          
-          
-
-          <ClipLoader
-
-          />
+          <ClipLoader />
         </div>
       ) : (
         <div>

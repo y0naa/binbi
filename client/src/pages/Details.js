@@ -13,6 +13,8 @@ const Details = () => {
   const userID = window.sessionStorage.getItem("userID");
   const idReservasi = `${Math.floor(Math.random() * 10000)}`;
 
+  
+
   // Use Location
   const location = useLocation();
   const { prop } = location.state;
@@ -49,14 +51,14 @@ const Details = () => {
   }
 
   const handleCheckout = (event) => {
-  
     event.preventDefault();
-
-    transaction.id_reservasi = `R${userID}${rev.id_reservasi}`
-    transaction.id_transaksi = `${userID}${Math.floor(Math.random() * 10000)}`
+    if (total < 1) {
+      alert("Check-out date must be after check-in");
+      return;
+    }
+    transaction.id_reservasi = `R${userID}${rev.id_reservasi}`;
+    transaction.id_transaksi = `${userID}${Math.floor(Math.random() * 10000)}`;
     transaction.total = total;
-
-
 
     fetch("http://localhost:3030/user/reservations", {
       method: "POST",
@@ -86,11 +88,13 @@ const Details = () => {
             alert("Saved Successfully");
             window.location.reload();
           } else {
-            alert("Something went wrong");
+            alert("Something went wrong, make sure you selected a payment method");
           }
         });
       } else {
-        alert("Could not save the reservation. Please try again later.");
+        alert(
+          "Could not save the reservation, make sure you have a valid input"
+        );
       }
     });
   };
@@ -202,8 +206,14 @@ const Details = () => {
                 </select>
 
                 <p className="mt-5 text-red-600">Total Payment:</p>
-                <p className=" text-black text-lg"> Rp. {total.toLocaleString()}</p>
-                <button className="button-primary mt-3" type="submit">
+                <p className=" text-black text-lg">
+                  {" "}
+                  Rp. {total.toLocaleString()}
+                </p>
+                <button
+                  className="button-primary mt-3 bg-cyan-500"
+                  type="submit"
+                >
                   Rent Now
                 </button>
               </div>
