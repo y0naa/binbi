@@ -54,7 +54,8 @@ func Register(c *gin.Context) {
 	}
 	err = DB.Table("pengguna").Create(&input).Error
 	if err != nil {
-		panic(err.Error())
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
 	}
 	c.JSON(http.StatusOK, gin.H{"success": input})
 	c.JSON(http.StatusOK, gin.H{"message": "validation succeeded"})

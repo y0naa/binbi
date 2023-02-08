@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { Link, useRouteLoaderData } from "react-router-dom";
-import PhoneInput from "react-phone-number-input";
+import { Link } from "react-router-dom";
 
 const Register = () => {
 

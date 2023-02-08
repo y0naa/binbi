@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import PlaceDetails from "../../components/Add-Place/PlaceDetails";
+import { useState } from "react";
 import ConfirmationDetails from "../../components/Add-Place/ConfirmationDetails";
+import PlaceDetails from "../../components/Add-Place/PlaceDetails";
 
 const AddPlace = () => {
   const userID = window.sessionStorage.getItem("userID");
@@ -59,7 +59,7 @@ const AddPlace = () => {
         <div className="my-5 flex justify-center">
           <button
             className="bg-cyan-600 hover:bg-blue-700 disabled:bg-gray-300 disabled:text-gray-300 text-white py-2 px-4 rounded-l   "
-            disabled={step == 0}
+            disabled={step === 0}
             onClick={() => {
               setStep((curStep) => curStep - 1);
             }}
@@ -68,7 +68,7 @@ const AddPlace = () => {
           </button>
           <button
             className="bg-cyan-600 hover:bg-blue-700 disabled:bg-gray-300 disabled:text-gray-300 text-white py-2 px-4 rounded-r  "
-            disabled={step == 1}
+            disabled={step === 1}
             onClick={() => {
               if (newData.nama_tempat.length < 1) {
                 alert("Please insert the name of your place");

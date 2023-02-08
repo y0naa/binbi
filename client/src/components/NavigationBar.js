@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Dropdown } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 import { Divider } from "rsuite";
@@ -13,6 +12,7 @@ const NavigationBar = () => {
   const { pathname } = location;
   const splitLocation = pathname.split("/");
   const userID = window.sessionStorage.getItem("userID");
+  // eslint-disable-next-line eqeqeq
   const admin = userID == "01" ? true : false;
 
   function displayNav() {

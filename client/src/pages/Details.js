@@ -1,9 +1,7 @@
-import React, { useState } from "react";
-import login from "../assets/login.jpg";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useState } from "react";
 import { BiBed } from "react-icons/bi";
-import { FaShower, FaHotTub } from "react-icons/fa";
-import Datepicker from "react-tailwindcss-datepicker";
-import { useEffect } from "react";
+import { FaHotTub, FaShower } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
 
 const Details = () => {
@@ -36,10 +34,7 @@ const Details = () => {
     total: 0,
     metode_bayar: "",
   });
-  const [value, setValue] = useState({
-    startDate: new Date(),
-    endDate: new Date().setMonth(11),
-  });
+
 
   function addTotal(mul, sel, harga) {
     //alert(harga)

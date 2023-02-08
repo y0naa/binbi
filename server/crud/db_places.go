@@ -37,12 +37,14 @@ func AddPlace(c *gin.Context) {
 
 	err := c.BindJSON(&newPlace)
 	if err != nil {
-		panic(err.Error())
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
 	}
 	newPlace.IdTempat = "T" + newPlace.IdTempat
 	err = DB.Table("tempat").Create(&newPlace).Error
 	if err != nil {
-		panic(err.Error())
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
 	}
 	c.JSON(http.StatusOK, gin.H{"success": newPlace})
 }
@@ -52,11 +54,13 @@ func UpdatePlace(c *gin.Context) {
 	var updatedPlace Tempat
 	err := c.BindJSON(&updatedPlace)
 	if err != nil {
-		panic(err.Error())
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
 	}
 	err = DB.Table("tempat").Where("id_tempat = ?", c.Param("id")).First(&place).Error
 	if err != nil {
-		panic(err.Error())
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
 	}
 	DB.Table("tempat").Model(&place).Updates(updatedPlace)
 	if err == nil {

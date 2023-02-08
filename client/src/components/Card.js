@@ -1,13 +1,13 @@
 import React from "react";
-import "../styles/card.css";
 import { BiBed } from "react-icons/bi";
-import { FaShower, FaHotTub } from "react-icons/fa";
+import { FaHotTub, FaShower } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import "../styles/card.css";
 
 const Card = ({ data }) => {
   return (
     <div className="card m-5 ">
-      <img className="w-full h-full object-contain" src={data.url_gambar} alt="test" />
+      <img className=" object-top w-full h-4/6 object-cover" src={data.url_gambar} alt="test" />
       <div className=" p-2.5 flex-col gap-4">
         {/* badge */}
         <div className="flex gap-10 items-center justify-between">

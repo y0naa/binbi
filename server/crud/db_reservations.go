@@ -16,7 +16,8 @@ func GetReservations(c *gin.Context) {
 	}
 	err = DB.Table("detail_reservasi").Where("id_penyewa = ?", userId).Find(&reservations).Error
 	if err != nil {
-		panic("Someting when wrong")
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
 	}
 	c.JSON(http.StatusOK, gin.H{"data": reservations})
 }
@@ -31,7 +32,8 @@ func GetOwnerReservations(c *gin.Context) {
 	}
 	err = DB.Table("detail_reservasi").Where("id_pemilik = ?", userId).Find(&reservations).Error
 	if err != nil {
-		panic("Someting when wrong")
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
 	}
 	c.JSON(http.StatusOK, gin.H{"data": reservations})
 }
@@ -46,12 +48,14 @@ func AddReservation(c *gin.Context) {
 	}
 	err = c.BindJSON(&reservation)
 	if err != nil {
-		panic(err.Error())
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
 	}
 	reservation.IdReservasi = "R" + userId + reservation.IdReservasi
 	err = DB.Table("detail_reservasi").Create(&reservation).Error
 	if err != nil {
-		panic(err.Error())
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
 	}
 	c.JSON(http.StatusOK, gin.H{"success": reservation})
 }

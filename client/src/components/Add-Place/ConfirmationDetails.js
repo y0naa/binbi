@@ -8,7 +8,6 @@ const ConfirmationDetails = ({ newData }) => {
   const userID = window.sessionStorage.getItem("userID");
   const [image, setImage] = useState();
   const [loading, setLoading] = useState(false);
-  let [color, setColor] = useState("#ffffff");
 
   const submit = () => {
     fetch("http://localhost:3030/user/places", {
@@ -45,19 +44,17 @@ const ConfirmationDetails = ({ newData }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-    setLoading(true);
+    await uploadImage();
     newData.id_pemilik = userID;
     if (newData.url_gambar.length < 1) {
       newData.url_gambar =
         "https://res.cloudinary.com/binbi/image/upload/v1674476489/tsqeulkkz0a9oyu90epe.png";
-      submit();
-    } else {
-      await uploadImage();
     }
+    submit();
   };
 
   const uploadImage = async () => {
+    setLoading(true);
     const formData = new FormData();
     formData.append("file", image);
     formData.append("upload_preset", "vkixbvzp");
@@ -72,7 +69,6 @@ const ConfirmationDetails = ({ newData }) => {
     const json = await response.json();
     const { secure_url } = json;
     newData.url_gambar = secure_url;
-    submit();
   };
   useEffect(() => {
     document.body.style.overflow = "hidden";

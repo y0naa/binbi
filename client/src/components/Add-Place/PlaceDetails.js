@@ -1,5 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect } from "react";
 import CurrencyInput from "react-currency-input-field";
-import React, { useEffect, useState } from "react";
 import { FaCity } from "react-icons/fa";
 import { GrMapLocation } from "react-icons/gr";
 import { MdOutlineLocalPostOffice } from "react-icons/md";

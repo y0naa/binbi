@@ -1,6 +1,4 @@
-import React from "react";
-import { useState } from "react";
-import { Nav, NavLink } from "react-bootstrap";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import loginImg from "../assets/login.jpg";
 
@@ -38,7 +36,7 @@ const Login = () => {
     });
 
     let response = await res.json();
-    if (response.message == "success") {
+    if (response.message === "success") {
       navigate("/home");
       window.sessionStorage.setItem(
         "accessToken",

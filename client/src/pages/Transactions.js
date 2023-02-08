@@ -1,37 +1,13 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
-import BootstrapTable from "react-bootstrap-table-next";
-import cellEditFactory from "react-bootstrap-table2-editor";
-import Button from "react-bootstrap/Button";
-import { Alert, Form } from "react-bootstrap";
 import History from "../components/History";
 const Transactions = () => {
   const [tes, setTes] = useState(false);
   const accessToken = window.sessionStorage.getItem("accessToken");
   const refreshToken = window.sessionStorage.getItem("refreshToken");
-  const userID = window.sessionStorage.getItem("userID");
-  const [search, setSearch] = useState();
   const [data, setData] = useState([]);
   const [location, setLocation] = useState([]);
   const [tempPlaces, setTempPlaces] = useState([]);
-  const columns = [
-    {
-      dataField: "id_transaksi",
-      text: "ID Transaksi",
-    },
-    {
-      dataField: "id_reservasi",
-      text: "ID Reservasi",
-    },
-    {
-      dataField: "total",
-      text: "Total",
-    },
-    {
-      dataField: "metode_bayar",
-      text: "Metode Bayar",
-    },
-  ];
-
 
   useEffect(() => {
     // Fetch Metode Bayar & total
@@ -111,17 +87,6 @@ const Transactions = () => {
           </div>
         ))}
       </div>
-
-      {/* for admin  */}
-      {/* <div className="m-5">
-        {data && (
-          <BootstrapTable
-            keyField="id_transaksi"
-            data={data}
-            columns={columns}
-          />
-        )}
-      </div> */}
     </div>
   );
 };

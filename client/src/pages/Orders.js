@@ -1,11 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import BootstrapTable from "react-bootstrap-table-next";
 
 const Orders = () => {
   const accessToken = window.sessionStorage.getItem("accessToken");
   const refreshToken = window.sessionStorage.getItem("refreshToken");
-  const userID = window.sessionStorage.getItem("userID");
-  const [search, setSearch] = useState();
   const [data, setData] = useState([{}]);
 
   const columns = [
@@ -34,25 +33,6 @@ const Orders = () => {
       text: "Tenant ID",
     },
   ];
-
-  const handleSearch = (event) => {
-    event.preventDefault();
-    if (search == null) {
-      search = "";
-    }
-    fetch("http://localhost:3030/user/orders", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Credentials": "true",
-        "Access-Token": accessToken,
-        "Refresh-Token": refreshToken,
-      },
-    })
-      .then((response) => response.json())
-      .then((json) => setData(json.data));
-  };
 
 
   useEffect(() => {

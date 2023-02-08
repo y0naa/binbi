@@ -1,7 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 
+import { useEffect, useState } from "react";
 import BootstrapTable from "react-bootstrap-table-next";
 import cellEditFactory from "react-bootstrap-table2-editor";
-import { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
@@ -37,7 +38,6 @@ const Dashboard = () => {
   // Show and add data to table
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
-  const [search, setSearch] = useState();
   const [data, setData] = useState();
   const [newData, changeData] = useState({
     id_tempat: "",
@@ -139,7 +139,7 @@ const Dashboard = () => {
   ];
 
   function notAdmin() {
-    if (userID != "01") {
+    if (userID !== "01") {
       return (
         <form onSubmit={handleSubmit}>
           <div className="form-group m-5 me-5 ms-5 pe-5 ps-5">

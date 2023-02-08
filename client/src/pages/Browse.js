@@ -1,13 +1,14 @@
-import { useState, useEffect, useMemo } from "react";
+/* eslint-disable array-callback-return */
+import { useState, useEffect } from "react";
 import Card from "../components/Card";
 
 const Browse = () => {
   const accessToken = window.sessionStorage.getItem("accessToken");
   const refreshToken = window.sessionStorage.getItem("refreshToken");
- // const userID = window.sessionStorage.getItem("userID");
+  const userID = window.sessionStorage.getItem("userID");
   const [data, setData] = useState([]);
   const [search, setSearch] = useState();
-  const [order, setOrder] = useState({
+  const [order] = useState({
     id_reservasi: "tes",
     id_tempat: "",
     id_pemilik: "",
@@ -19,9 +20,6 @@ const Browse = () => {
   // Methods
   const handleSearch = (event) => {
     event.preventDefault();
-    if (search === null) {
-      search = "tes";
-    }
     fetch(`http://localhost:3030/user/places?nama=${search}&lokasi=${search}`, {
       method: "GET",
       headers: {
@@ -51,13 +49,11 @@ const Browse = () => {
       .then((json) => {
         setData(json.data);
       });
-  }, [order]); // use effect will run if data changes
+  }, [accessToken, order, refreshToken]); // use effect will run if data changes
 
   return (
     <div>
-      
       <div className="row m-3">
-  
         <form class="flex items-center m-1">
           <div class="relative w-full rounded-">
             <div class="absolute inset-y-0 left-2 flex items-center pl-3 pointer-events-none">
@@ -108,14 +104,19 @@ const Browse = () => {
         </form>
       </div>
 
-      <h1 className="font-serif font-bold mx-5">Browse Places</h1>
+      <h1 className="font-serif font-bold mx-5 my-5">Browse Places</h1>
 
       {/* Cards */}
       <div className="flex flex-wrap justify-center ">
-     
-        {data.map((d) => {
-          return <Card data={d} />;
-        })}
+        {data.filter((d) => d.id_pemilik !== userID).length === 0 ? (
+          <h3 className="text-center text-lg">Sorry we couldn't find what you're looking for</h3>
+        ) : (
+          data
+            .filter((d) => d.id_pemilik !== userID)
+            .map((d) => {
+              return <Card data={d} />;
+            })
+        )}
       </div>
     </div>
   );

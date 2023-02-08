@@ -4,6 +4,7 @@ import (
 	"server/crud"
 
 	"github.com/gin-contrib/cors"
+
 	"github.com/gin-gonic/gin" // Framework untuk REST API
 )
 
@@ -18,10 +19,13 @@ func main() {
 
 func initRouter() *gin.Engine {
 	router := gin.Default()
-	config := cors.DefaultConfig()
-	config.AllowAllOrigins = true
+	router.Use(cors.New(cors.Config{
+		AllowOrigins:     []string{"*"},
+		AllowMethods:     []string{"GET", "POST", "OPTIONS"},
+		AllowHeaders:     []string{"Content-Type", "Access-Control-Allow-Origin", "Access-Control-Allow-Credentials"},
+		AllowCredentials: true,
+	}))
 
-	router.Use(cors.New(config))
 	router.POST("/register", crud.Register)
 	router.POST("/login", crud.Login)
 

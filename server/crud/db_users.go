@@ -16,7 +16,8 @@ func GetOneUser(c *gin.Context) {
 	var pengguna []Pengguna
 	err := DB.Table("pengguna").Where("id_user = ?", c.Param("id")).First(&pengguna).Error
 	if err != nil {
-		panic(err.Error())
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
 	}
 	c.JSON(http.StatusOK, gin.H{"data": pengguna})
 }
