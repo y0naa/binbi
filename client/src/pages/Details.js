@@ -51,6 +51,11 @@ const Details = () => {
       alert("Check-out date must be after check-in");
       return;
     }
+    //alert(transaction.metode_bayar);
+    if (transaction.metode_bayar.length < 3) {
+      alert("Please select the correct transaction method");
+      return;
+    }
     transaction.id_reservasi = `R${userID}${rev.id_reservasi}`;
     transaction.id_transaksi = `${userID}${Math.floor(Math.random() * 10000)}`;
     transaction.total = total;

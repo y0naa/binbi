@@ -6,7 +6,7 @@ const ConfirmationDetails = ({ newData }) => {
   const accessToken = window.sessionStorage.getItem("accessToken");
   const refreshToken = window.sessionStorage.getItem("refreshToken");
   const userID = window.sessionStorage.getItem("userID");
-  const [image, setImage] = useState();
+  const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const submit = () => {
@@ -44,18 +44,21 @@ const ConfirmationDetails = ({ newData }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    await uploadImage();
-    newData.id_pemilik = userID;
-    if (newData.url_gambar.length < 1) {
+    if (image === null) {
       newData.url_gambar =
         "https://res.cloudinary.com/binbi/image/upload/v1674476489/tsqeulkkz0a9oyu90epe.png";
+    } else {
+      await uploadImage();
     }
+    newData.id_pemilik = userID;
+    //alert(newData.url_gambar);
     submit();
   };
 
   const uploadImage = async () => {
     setLoading(true);
     const formData = new FormData();
+
     formData.append("file", image);
     formData.append("upload_preset", "vkixbvzp");
     formData.append("cloud_name", "binbi");
@@ -70,8 +73,9 @@ const ConfirmationDetails = ({ newData }) => {
     const { secure_url } = json;
     newData.url_gambar = secure_url;
   };
+
   useEffect(() => {
-    document.body.style.overflow = "hidden";
+    //document.body.style.overflow = "";
   }, []);
 
   return (

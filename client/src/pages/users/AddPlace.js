@@ -73,10 +73,10 @@ const AddPlace = () => {
               if (newData.nama_tempat.length < 1) {
                 alert("Please insert the name of your place");
               } else if (
-                locationDetails.loc1.length < 1 ||
-                locationDetails.loc2.length < 1 ||
-                locationDetails.loc3.length < 1 ||
-                locationDetails.loc4.length < 1
+                locationDetails.loc1.toString().length < 1 ||
+                locationDetails.loc2.toString().length < 1 ||
+                locationDetails.loc3.toString().length < 1 ||
+                locationDetails.loc4.toString().length < 1
               ) {
                // alert(locationDetails.loc1);
                 alert("Please insert all address fields");
@@ -85,7 +85,7 @@ const AddPlace = () => {
                 newData.jumlah_kamar_mandi < 1
               ) {
                 alert("Must be at least 1 bedroom and shower");
-              } else if (newData.harga_permalam < 1) {
+              } else if (newData.harga_permalam.toString().length < 1) {
                 alert("Please insert a valid price");
               } else {
                 setStep((curStep) => curStep + 1);
